@@ -5,7 +5,7 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
-// Log loaded values (optional)
+// Log loaded values (for debuging)
 // console.log("URL:", process.env.SUPABASE_URL);
 // console.log("KEY:", process.env.SUPABASE_ANON_KEY);
 
