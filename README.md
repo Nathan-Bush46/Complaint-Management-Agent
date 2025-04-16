@@ -1,4 +1,4 @@
-```markdown
+````markdown
 # 🛠 Complaint Management Agent
 
 A full-stack complaint submission and review system with public and internal views.
@@ -17,6 +17,7 @@ git clone https://github.com/yourusername/complaint-management-agent.git
 cd complaint-management-agent
 code .
 ```
+````
 
 Click **"Reopen in Container"** when prompted.
 
@@ -44,7 +45,7 @@ npm run dev
 ## 🗃 Database Schema
 
 | Column       | Type      | Default             |
-|--------------|-----------|---------------------|
+| ------------ | --------- | ------------------- |
 | `id`         | UUID      | `gen_random_uuid()` |
 | `name`       | text      |                     |
 | `email`      | text      |                     |
@@ -66,4 +67,7 @@ npm run dev
 - Pagination & search
 - Spam protection (e.g., CAPTCHA)
 - Tests & monitoring
+
+```
+
 ```
