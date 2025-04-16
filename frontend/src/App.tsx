@@ -34,7 +34,7 @@ const App = () => {
     }
 
     return (
-        <div className="relative min-h-screen p-6 max-w-lg mx-auto text-center">
+        <div className="relative min-h-screen p-6 max-w-xl mx-auto">
             {/* Admin Dashboard link - top right */}
             <div className="absolute top-4 right-4">
                 <a
@@ -45,56 +45,70 @@ const App = () => {
                 </a>
             </div>
 
-            <h1 className="text-2xl font-bold mb-4 mt-8">Submit a Complaint</h1>
+            <div className="bg-white shadow-md rounded-lg p-6">
+                <h1 className="text-2xl font-bold mb-6 text-center">Submit a Complaint</h1>
 
-            {error && (
-                <div className="text-red-500 font-semibold mb-2">{error}</div>
-            )}
+                {error && (
+                    <div className="text-red-500 font-semibold mb-4 text-center">{error}</div>
+                )}
 
-            {submitted ? (
-                <div className="space-y-4">
-                    <div className="text-green-600 font-semibold">
-                        Thank you for your submission!
+                {submitted ? (
+                    <div className="space-y-4 text-center">
+                        <div className="text-green-600 font-semibold">
+                            Thank you for your submission!
+                        </div>
+                        <button
+                            className="bg-gray-200 hover:bg-gray-300 text-black px-4 py-2 rounded"
+                            onClick={resetForm}
+                        >
+                            Submit Another Complaint
+                        </button>
                     </div>
-                    <button
-                        className="bg-gray-200 hover:bg-gray-300 text-black px-4 py-2 rounded"
-                        onClick={resetForm}
-                    >
-                        Submit Another Complaint
-                    </button>
-                </div>
-            ) : (
-                <form onSubmit={handleSubmit} className="space-y-3">
-                    <input
-                        className="border p-2 w-full"
-                        placeholder="Name"
-                        value={name}
-                        onChange={e => setName(e.target.value)}
-                        required
-                    />
-                    <input
-                        className="border p-2 w-full"
-                        placeholder="Email"
-                        type="email"
-                        value={email}
-                        onChange={e => setEmail(e.target.value)}
-                        required
-                    />
-                    <textarea
-                        className="border p-2 w-full"
-                        placeholder="Your complaint..."
-                        value={complaint}
-                        onChange={e => setComplaint(e.target.value)}
-                        required
-                    />
-                    <button
-                        className="bg-blue-500 text-white px-4 py-2 rounded"
-                        type="submit"
-                    >
-                        Submit
-                    </button>
-                </form>
-            )}
+                ) : (
+                    <form onSubmit={handleSubmit} className="space-y-4">
+                        <div>
+                            <label className="block font-semibold mb-1 text-left">Name</label>
+                            <input
+                                className="border border-gray-300 p-2 rounded w-full"
+                                placeholder="Your name"
+                                value={name}
+                                onChange={e => setName(e.target.value)}
+                                required
+                            />
+                        </div>
+
+                        <div>
+                            <label className="block font-semibold mb-1 text-left">Email</label>
+                            <input
+                                className="border border-gray-300 p-2 rounded w-full"
+                                placeholder="your@email.com"
+                                type="email"
+                                value={email}
+                                onChange={e => setEmail(e.target.value)}
+                                required
+                            />
+                        </div>
+
+                        <div>
+                            <label className="block font-semibold mb-1 text-left">Complaint</label>
+                            <textarea
+                                className="border border-gray-300 p-2 rounded w-full min-h-[120px]"
+                                placeholder="Describe your issue..."
+                                value={complaint}
+                                onChange={e => setComplaint(e.target.value)}
+                                required
+                            />
+                        </div>
+
+                        <button
+                            className="bg-blue-500 text-white px-4 py-2 rounded w-full hover:bg-blue-600 transition"
+                            type="submit"
+                        >
+                            Submit
+                        </button>
+                    </form>
+                )}
+            </div>
         </div>
     )
 }

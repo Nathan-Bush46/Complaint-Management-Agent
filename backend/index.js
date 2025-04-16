@@ -9,7 +9,7 @@ dotenv.config();
 // console.log("URL:", process.env.SUPABASE_URL);
 // console.log("KEY:", process.env.SUPABASE_ANON_KEY);
 
-// ✅ Correct Supabase key reference
+// Supabase key reference
 const supabase = createClient(
   process.env.SUPABASE_URL,
   process.env.SUPABASE_ANON_KEY
